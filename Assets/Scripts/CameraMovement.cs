@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     public Transform playerTransform;
+    public float maxLeft;
 
     private Transform selfTransform;
 
@@ -32,7 +33,7 @@ public class CameraMovement : MonoBehaviour
             yPosition = playerTransform.position.y;
         }
 
-        if (!(playerTransform.position.x < 0))
+        if (!(playerTransform.position.x < maxLeft))
         {
             xPosition = playerTransform.position.x;
         }

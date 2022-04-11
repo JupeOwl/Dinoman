@@ -5,7 +5,9 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    [SerializeField] private bool grounded;
+    private Attack attack;
+
+    static public bool grounded;
     
     public Transform playerTransform;
     public float speed;
@@ -15,10 +17,26 @@ public class Movement : MonoBehaviour
     public LayerMask groundLayer;
     public Animator animator;
 
+    public static Movement Instance { get; private set; }
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        attack = GetComponent<Attack>();
     }
 
     private void Update()
@@ -36,7 +54,7 @@ public class Movement : MonoBehaviour
             animator.SetBool("falls", false);
         }
 
-        if (grounded && (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow)))
+        if (grounded && Input.GetKeyDown(KeyCode.Z))
         {
             GetComponent<Rigidbody2D>().velocity = new Vector2(rb.velocity.x, jumpHeight);
             animator.SetBool("jumps", true);
@@ -64,11 +82,11 @@ public class Movement : MonoBehaviour
 
         if (x == 1)
         {
-            playerTransform.localScale = new Vector3(1, 1, 1);
+            playerTransform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else if (x == -1)
         {
-            playerTransform.localScale = new Vector3(-1, 1, 1);
+            playerTransform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }
 
@@ -76,5 +94,6 @@ public class Movement : MonoBehaviour
     {
         playerTransform.position = new Vector2(0, 0);
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        attack.changeDrunk(1f);
     }
 }
