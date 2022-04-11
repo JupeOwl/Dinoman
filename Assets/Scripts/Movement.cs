@@ -17,7 +17,7 @@ public class Movement : MonoBehaviour
     public LayerMask groundLayer;
     public Animator animator;
 
-    public static Movement Instance { get; private set; }
+    public static Movement Instance { get; set; }
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.

@@ -20,11 +20,11 @@ public class platformMovement : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, new Vector2((StartPos.x + Distance), transform.position.y), Speed * Time.deltaTime);
             
-            if (Distance < 0)
+            if (Distance < 0f)
             {
                 if (transform.position.x <= (StartPos.x + Distance))
                 {
-                    Distance = -1;
+                    Distance *= -1;
                 }
             }
             
@@ -32,7 +32,7 @@ public class platformMovement : MonoBehaviour
             {
                 if (transform.position.x >= (StartPos.x + Distance))
                 {
-                    Distance = -1;
+                    Distance *= -1;
                 }
             }
         }
@@ -41,11 +41,11 @@ public class platformMovement : MonoBehaviour
         {
             
             transform.position = Vector2.MoveTowards(transform.position, new Vector2(transform.position.x, (StartPos.y + Distance)), Speed * Time.deltaTime);
-            if (Distance < 0)
+            if (Distance < 0f)
             {
                 if (transform.position.y <= (StartPos.y + Distance))
                 {
-                    Distance = -1;
+                    Distance *= -1;
                 }
             }
             
@@ -53,7 +53,7 @@ public class platformMovement : MonoBehaviour
             {
                 if (transform.position.y >= (StartPos.y + Distance))
                 {
-                    Distance = -1;
+                    Distance *= -1;
                 }
             }
         }

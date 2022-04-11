@@ -40,7 +40,7 @@ public class Bullet : MonoBehaviour
         animator.SetTrigger("splats");
         move = false;
 
-        Destroy(GetComponent<Rigidbody2D>());
+        GetComponent<Rigidbody2D>().gravityScale = 1;
         GetComponent<CircleCollider2D>().enabled = false;
         Destroy(gameObject, 0.3f);
     }
