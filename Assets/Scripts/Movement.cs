@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Movement : MonoBehaviour
 {
@@ -16,6 +18,9 @@ public class Movement : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
     public Animator animator;
+    public GameObject deathCounter;
+
+    public int deaths = 0;
 
     public static Movement Instance { get; set; }
     private void Awake()
@@ -92,8 +97,10 @@ public class Movement : MonoBehaviour
 
     void Death()
     {
+        deaths++;
         playerTransform.position = new Vector2(0, 0);
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         attack.changeDrunk(1f);
+        deathCounter.GetComponent<Text>().text = deaths.ToString();
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AnimationHandler : MonoBehaviour
 {
@@ -17,5 +18,10 @@ public class AnimationHandler : MonoBehaviour
     void Update()
     {
         animator.SetFloat("jumpVelocity", rb.velocity.y);
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Start");
+        }
     }
 }
