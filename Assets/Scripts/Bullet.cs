@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
 
         Invoke("enableCollider", 0.08f);
 
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, 3f);
     }
 
     // Update is called once per frame
