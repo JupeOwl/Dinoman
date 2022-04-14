@@ -43,6 +43,11 @@ public class Bullet : MonoBehaviour
         GetComponent<Rigidbody2D>().gravityScale = 1;
         GetComponent<CircleCollider2D>().enabled = false;
         Destroy(gameObject, 0.3f);
+
+        if (collisionTag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 
     private void enableCollider()

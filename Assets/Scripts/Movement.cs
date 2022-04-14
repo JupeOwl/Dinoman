@@ -71,6 +71,16 @@ public class Movement : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        string collisionTag = collision.gameObject.tag;
+
+        if (collisionTag == "Enemy")
+        {
+            Death();
+        }
+    }
+
     void Move()
     {
         float x = Input.GetAxisRaw("Horizontal");
@@ -100,7 +110,6 @@ public class Movement : MonoBehaviour
         deaths++;
         playerTransform.position = new Vector2(0, 0);
         GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        attack.changeDrunk(1f);
         deathCounter.GetComponent<Text>().text = deaths.ToString();
     }
 }
