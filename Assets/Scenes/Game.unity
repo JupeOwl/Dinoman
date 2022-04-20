@@ -749,6 +749,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2409418210889904953, guid: 7f70df6a3a2f6aa44b68c23e780814fd, type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 2643185260169559955, guid: 73ff462dcc81d004990bbd0bf9c6ad76, type: 3}
+    - target: {fileID: 2409418210889904953, guid: 7f70df6a3a2f6aa44b68c23e780814fd, type: 3}
       propertyPath: speed
       value: 3
       objectReference: {fileID: 0}
@@ -5018,6 +5022,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2409418210889904953, guid: 7f70df6a3a2f6aa44b68c23e780814fd, type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 2643185260169559955, guid: 73ff462dcc81d004990bbd0bf9c6ad76, type: 3}
+    - target: {fileID: 2409418210889904953, guid: 7f70df6a3a2f6aa44b68c23e780814fd, type: 3}
       propertyPath: speed
       value: 3
       objectReference: {fileID: 0}
@@ -5297,6 +5305,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2409418210889904953, guid: 7f70df6a3a2f6aa44b68c23e780814fd, type: 3}
+      propertyPath: drop
+      value: 
+      objectReference: {fileID: 2643185260169559955, guid: 73ff462dcc81d004990bbd0bf9c6ad76, type: 3}
     - target: {fileID: 2409418210889904953, guid: 7f70df6a3a2f6aa44b68c23e780814fd, type: 3}
       propertyPath: m_Enabled
       value: 0

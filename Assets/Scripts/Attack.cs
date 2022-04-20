@@ -5,6 +5,21 @@ using UnityEngine.UI;
 
 public class Attack : MonoBehaviour
 {
+    public static Attack Instance { get; set; }
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     private Animator animator;
     private float lastTime;
 

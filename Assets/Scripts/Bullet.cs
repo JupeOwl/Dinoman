@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
 
         Invoke("enableCollider", 0.08f);
 
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 1.5f);
     }
 
     // Update is called once per frame
@@ -43,11 +43,6 @@ public class Bullet : MonoBehaviour
         GetComponent<Rigidbody2D>().gravityScale = 1;
         GetComponent<CircleCollider2D>().enabled = false;
         Destroy(gameObject, 0.3f);
-
-        if (collisionTag == "Enemy")
-        {
-            Destroy(collision.gameObject);
-        }
     }
 
     private void enableCollider()
